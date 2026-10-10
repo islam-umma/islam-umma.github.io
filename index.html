@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Призыв к пробуждению уммы</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+    :root {
+        --bg-base: #050508;
+        --bg-card: rgba(22, 22, 30, 0.55);
+        --bg-glass: rgba(255, 255, 255, 0.03);
+        --border-glass: rgba(212, 175, 55, 0.25);
+        --border-glow: rgba(255, 215, 0, 0.4);
+        
+        --gold-primary: #f3e5ab;
+        --gold-accent: #d4af37;
+        --gold-gradient: linear-gradient(135deg, #fff2a3 0%, #d4af37 50%, #aa7c11 100%);
+        --gold-glow: rgba(212, 175, 55, 0.18);
+        
+        --text-main: #f0f0f5;
+        --text-muted: #a0a0b0;
+        --text-highlight: #ffffff;
+        
+        --font-serif: 'Cinzel', serif;
+        --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        
+        --radius-xl: clamp(20px, 4vw, 32px);
+        --radius-lg: clamp(14px, 3vw, 24px);
+        --radius-md: 16px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        background-color: var(--bg-base);
+        color: var(--text-main);
+        font-family: var(--font-sans);
+        font-size: clamp(15px, 2.2vw, 18px);
+        line-height: 1.85; /* Увеличено для лучшей читаемости при выравнивании */
+        overflow-x: hidden;
+        position: relative;
+        padding-bottom: env(safe-area-inset-bottom);
+        text-align: justify; /* Выравнивание основного текста по ширине */
+        text-justify: inter-word;
+    }
+
+    /* Ambient Dynamic Background Glows (iOS 26 Mesh) */
+    .ambient-glow {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(120px);
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0.4;
+        animation: pulseGlow 12s ease-in-out infinite alternate;
+    }
+
+    .glow-1 {
+        top: -10%;
+        left: 20%;
+        width: clamp(300px, 50vw, 600px);
+        height: clamp(300px, 50vw, 600px);
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(0,0,0,0) 70%);
+    }
+
+    .glow-2 {
+        top: 40%;
+        right: -10%;
+        width: clamp(350px, 60vw, 700px);
+        height: clamp(350px, 60vw, 700px);
+        background: radial-gradient(circle, rgba(120, 80, 255, 0.15) 0%, rgba(0,0,0,0) 70%);
+    }
+
+    .glow-3 {
+        bottom: 5%;
+        left: -5%;
+        width: clamp(320px, 55vw, 650px);
+        height: clamp(320px, 55vw, 650px);
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(0,0,0,0) 70%);
+    }
+
+    @keyframes pulseGlow {
+        0% { transform: scale(1) translate(0, 0); opacity: 0.35; }
+        100% { transform: scale(1.15) translate(20px, -15px); opacity: 0.6; }
+    }
+
+    /* Layout Container */
+    .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: clamp(30px, 6vw, 60px) clamp(16px, 4vw, 24px);
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Hero Header */
+    .hero {
+        text-align: center;
+        margin-bottom: clamp(32px, 6vw, 60px);
+    }
+
+    .hero-title {
+        font-family: var(--font-serif);
+        font-size: clamp(26px, 6vw, 54px);
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        line-height: 1.25;
+        margin-bottom: 12px;
+        background: linear-gradient(180deg, #ffffff 0%, #d0d0e0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Luxury Glass Card Wrapper */
+    .glass-card {
+        background: var(--bg-card);
+        backdrop-filter: blur(30px) saturate(190%);
+        -webkit-backdrop-filter: blur(30px) saturate(190%);
+        border: 1px solid var(--border-glass);
+        border-radius: var(--radius-xl);
+        padding: clamp(24px, 5vw, 56px) clamp(18px, 4.5vw, 48px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 
+                    inset 0 1px 2px rgba(255, 255, 255, 0.12),
+                    0 0 30px var(--gold-glow);
+        margin-bottom: clamp(24px, 4vw, 40px);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+    }
+
+    .glass-card:hover {
+        border-color: var(--border-glow);
+    }
+
+    /* Content Formatting */
+    .text-block {
+        margin-bottom: clamp(18px, 3.5vw, 28px);
+        color: var(--text-main);
+        word-wrap: break-word;
+        text-align: justify; /* Выравнивание текста блоков по ширине */
+        text-justify: inter-word;
+    }
+
+    .text-block:last-child {
+        margin-bottom: 0;
+    }
+
+    .text-important {
+        font-size: clamp(17px, 2.5vw, 21px);
+        font-weight: 600;
+        margin-top: clamp(20px, 4vw, 32px);
+        text-align: justify;
+    }
+
+    /* Visual Key Highlight Styling */
+    .highlight {
+        color: var(--text-highlight);
+        font-weight: 600;
+        background: linear-gradient(120deg, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0.05) 100%);
+        padding: 2px 6px;
+        border-radius: 6px;
+        border-bottom: 1px solid var(--gold-accent);
+        display: inline;
+    }
+
+    .highlight-gold {
+        background: var(--gold-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+    }
+
+    /* Quran Citation Card */
+    .quran-quote {
+        position: relative;
+        margin: clamp(20px, 4vw, 36px) 0;
+        padding: clamp(16px, 3.5vw, 28px) clamp(18px, 4vw, 36px);
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(15, 15, 25, 0.6) 100%);
+        border-left: 3px solid var(--gold-accent);
+        border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        text-align: justify; /* Выравнивание цитат по ширине */
+    }
+
+    .quran-quote p {
+        font-family: var(--font-serif);
+        font-size: clamp(16px, 2.5vw, 21px);
+        color: var(--gold-primary);
+        font-style: italic;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    /* Call to Action & Footer Card */
+    .cta-card {
+        text-align: center;
+        background: linear-gradient(180deg, rgba(25, 22, 15, 0.7) 0%, rgba(10, 10, 15, 0.8) 100%);
+        border: 1px solid var(--gold-accent);
+    }
+
+    /* Исключение для блока со специфичным выравниванием внутри cta-card, если требуется, но оставляем общие правила */
+    .cta-card .quran-quote {
+        text-align: left; /* Возвращаем аятам в финальной карточке их изначальное выравнивание, если в разметке стояло style="text-align: left;" */
+    }
+    .cta-card .quran-quote p {
+        text-align: left;
+    }
+
+    .action-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: clamp(20px, 4vw, 32px);
+        padding: clamp(14px, 3vw, 18px) clamp(28px, 5vw, 42px);
+        width: 100%;
+        max-width: 360px;
+        font-family: var(--font-sans);
+        font-size: clamp(14px, 2vw, 16px);
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #050508;
+        background: var(--gold-gradient);
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        text-decoration: none;
+    }
+
+    .action-button:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 18px 36px rgba(212, 175, 55, 0.6);
+    }
+
+    .action-button:active {
+        transform: scale(0.98);
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 480px) {
+        .glass-card {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+        .quran-quote {
+            border-left-width: 2px;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <!-- Ambient iOS 26 Dynamic Glows -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Main Content Container -->
+    <main class="container">
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1 class="hero-title">Пробуждение уммы</h1>
+        </header>
+
+        <!-- Main Card 1 -->
+        <section class="glass-card">
+            <p class="text-block">
+                Знакомо ли вам чувство, когда в сердце нет покоя или умиротворения, будто чего‑то не хватает? Знаете, почему? Из-за <span class="highlight">отсутствия истинного намерения.</span> В Коране сказано:
+            </p>
+
+            <blockquote class="quran-quote">
+                <p>«Человек получит только то, к чему он стремился» (Св. Коран, 53:39)</p>
+            </blockquote>
+
+            <p class="text-block">
+                Если намерением человека является <span class="highlight">искренность и стойкость</span>, то его плодами будет духовный рост с сопровождением покоя и наслаждения в сердце. Ведь в Коране сказано:
+            </p>
+
+            <blockquote class="quran-quote">
+                <p>«Разве не поминанием Аллаха успокаиваются сердца?» (Св. Коран 13:28)</p>
+            </blockquote>
+
+            <p class="text-block">
+                Сердца приобретают покой не при формальных поклонениях, а при <span class="highlight">осознанных, искренних</span>. Это и есть критерий твоей привязки к Исламу. Ведь в хадисе от ибн Маджа и Тирмизи говорится, что <span class="highlight">богатство в сердце, т.е. покой и наслаждение в нем, приобретаются исключительно тогда, когда твоим намерением является ахират</span>.
+            </p>
+
+            <p class="text-block">
+                От того, что у тебя в сердце, зависит то, в каком состоянии оно будет и какое твое положение будет в обоих мирах, ведь в Коране говорится:
+            </p>
+
+            <blockquote class="quran-quote">
+                <p>«Поистине Аллах не меняет положения людей до тех пор, пока они не изменят то, что в них самих» (Св. Коран 13:11)</p>
+            </blockquote>
+
+            <p class="text-block">
+                Поэтому, прежде, чем тебя коснутся трудности в жизни как наказания для пробуждения твоего сердца, Аллах сначала внушает в твое сердце беспокойство, даже если у тебя в жизни, казалось бы, все хорошо, чтобы ты <span class="highlight">пересмотрел свои деяния и их намерения</span>. Так что, <span class="highlight">беспокойство в сердце – это знак</span>, быть может ты неискренен с Аллахом в поклонении или совершаешь греховное. <span class="highlight-gold">Задумайся над этим.</span>
+            </p>
+
+            <p class="text-block">
+                Поэтому, сделай свой Ислам не навязчивой 5-ти минутной рутиной, а как <span class="highlight-gold">желанной приоритетной целью всей жизни</span>, которая проявляется даже в мелочах. Клянусь, ты увидишь, как твоя жизнь изменится с ног на голову. Это великое благо, к которому Аллах направляет тех, кого пожелает.
+            </p>
+
+            <p class="text-block">
+                Знаешь, почему ты сейчас читаешь эти слова? Возможно, Аллах специально привёл тебя к ним — потому что <span class="highlight">видит в тебе потенциал</span>. Не пренебрегай этим.
+            </p>
+
+            <p class="text-block">
+                Поэтому, пусть твоим распорядком дня будут <span class="highlight">сунны пророка Мухаммада (с.а.с)</span>, твой нрав – нравом пророка (с.а.с), а твоя музыка, которую ты возлюбил – прослушиванием Корана.
+            </p>
+        </section>
+
+        <!-- Main Card 2: Example of Prophet (s.a.w) -->
+        <section class="glass-card">
+            <p class="text-block">
+                Как-то раз в ночном походе у сподвижника Кульсум ибн аль-Хусайн, задремавшего на верблюдице от усталости, задело седло верблюдицы и ударило по ноге пророка Мухаммада (с.а.с) до боли. Сподвижник, проснувшись и осознав это, тут же начал просить прощения. И знаете, какой реакций была пророка (с.а.с)? Он проявил <span class="highlight">удивительное терпение и мягкость</span>. Он не стал ругать сподвижника, устраивать разбирательства и т.д., а лишь спокойно ответил: «Иди дальше… Иди дальше…». Каким же нужно обладать нравом, чтобы проявить такое прекрасное терпение и мягкость! Не зря Аллах сказал в Коране о своем пророке:
+            </p>
+
+            <blockquote class="quran-quote">
+                <p>«Поистине, твой нрав превосходен» (Св. Коран 68:4)</p>
+            </blockquote>
+
+            <p class="text-block">
+                Поэтому, последовав за пророком, как за нашим примером, мы сможем <span class="highlight-gold">преуспеть в обоих мирах</span>. Ведь пример нам необходим, посмотрите на профессионального и популярного футболиста Роналду. Как он достиг легендарного уровня в футболе? По причине своего стремления к подражанию примеру своего кумира и учителя Луиша Фигу. Также и с нами: <span class="highlight">мы добьемся успеха тогда, когда начнем подражать пророку Мухаммаду (с.а.с)</span>.
+            </p>
+
+            <p class="text-block">
+                Поэтому, не говори: «Сунна необязательна», а говори: <span class="highlight-gold">«Сунна для меня пример идеала - ислама»</span>.
+            </p>
+
+            <p class="text-block">
+                Ведь сунна является формой изящного исполнения фарзов, к примеру: <span class="highlight">дуа после сна, еды и т.д.</span> – форма благодарности Аллаху за блага, к которой Он призывает нас в Коране; <span class="highlight">суннат намазы</span> – подстраховка в День Суда, если в твоих обязательных намазах найдутся упущения или ошибки; <span class="highlight">Сивак, благовония</span> – соблюдение культуры человека в обществе, чтобы от человека уж наверняка не исходило дурного запаха и т.д; <span class="highlight">Распространение саляма, частая улыбка</span> – установление теплой атмосферы между людьми, а значит – это способ объединения уммы. <span class="highlight">Дуа и зикры в определенных ситуациях</span> – исполнение повеления Аллаха поминать Его многократно. Поэтому <span class="highlight-gold">сунна – не механический набор действий, а живое воплощение ценностей Ислама на практике</span>.
+            </p>
+        </section>
+
+        <!-- Final Call Section -->
+        <section class="glass-card cta-card">
+            <p class="text-block">
+                Помнишь, мы говорили, что Аллах, возможно, привел тебя сюда не просто так, так вот, возможно он видит в тебе не просто потенциал, а <span class="highlight-gold">причину исправления всей уммы</span>. Ведь пробуждение уммы начинается с пробуждения одного сердца среди каждого из нас. Наша умма действительно нуждается в сильных личностях, который будут вытаскивать умму из ямы стремления к мирскому и духовной спячки. Поэтому Аллах сказал в Коране:
+            </p>
+
+            <blockquote class="quran-quote" style="text-align: left;">
+                <p>«Пусть среди вас будет группа людей, которые будут призывать к добру, повелевать одобряемое и запрещать предосудительное. И такие преуспевшие» (Св. Коран 3:104)</p>
+            </blockquote>
+
+            <p class="text-block" style="font-size: 20px; font-weight: 600; margin-top: 24px;">
+                <span class="highlight-gold">Спаси себя и других.</span> Распространи это сообщение остальным – так ты исполнишь часть своего долга перед Аллахом – призыв к Исламу. И да, не забудь сделать искреннюю таубу, ведь она – ключ к дверям милости Аллаха в обоих мирах, и с него начинается путь праведников и ученых.
+            </p>
+
+            <button class="action-button" onclick="navigator.clipboard.writeText(window.location.href); alert('Ссылка на призыв скопирована. Поделитесь ею с братьями и сестрами!');">
+                Распространить Призыв
+            </button>
+        </section>
+
+    </main>
+
+</body>
+</html>
